@@ -17,7 +17,6 @@ class App extends React.Component {
       "https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating"
     );
     this.setState({ movies, isLoading: false });
-    console.log(movies);
   };
   componentDidMount() {
     this.getMovies();
@@ -41,6 +40,7 @@ class App extends React.Component {
                   title={movie.title}
                   summary={movie.summary}
                   poster={movie.medium_cover_image}
+                  genres={movie.genres}
                 />
               );
             })}
